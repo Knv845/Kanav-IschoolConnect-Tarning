@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            display: inline-block ;
+            padding: 5px;
+        }
+    </style>
+    
+</head>
+<body>
+    <form action="#" method="get">
+    <div>
+        <label for="username">Username</label>
+        <input required  name="username"/ id="name">
+    </div>
+    <div>
+        <label for="age">User Age</label>
+        <input required name="userage" min="18" max="90" id="age" type="number">
+    </div>
+    <div>
+        <label for="email">User Email</label>
+        <input required name="useremail" id="email"/>
+    </div>
+    <div>
+        <label for="number">Number</label>
+        <input   placeholder="###-####-####" pattern="\d{3}-/d{4}-/d{4}" required name="number" id="number"/>
+    </div>
+        <button>Submit</button>
+    </form>
+</body>
+<script>
+    var age;
+    age = document.getElementById('age');
+    age.setCustomValidity("Your age");
+    age.addEventListener("input", function(){
+        if(age.value == ''){
+                    age.setCustomValidity("We need your age to validate");
+                }else if(age.value < 18){
+                    age.setCustomValidity("You are too Young");
+                }
+                else if(age.value > 90){
+                    age.setCustomValidity("You are too old ");
+                }else{
+                    age.setCustomValidity("");
+                }
+
+    });
+    function load()
+    {
+
+    }
+    onload = load();
+</script>
+</html>
