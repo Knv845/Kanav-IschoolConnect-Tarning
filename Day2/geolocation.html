@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    addEventListener("load",init);
+    function init(){
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(funSuccess, funError,{
+                enableHighAccuracy: true,
+                timeout: 5000,
+                
+            })
+        }else{
+            alert("Please Update your Browser")
+        }
+    }
+    function funSuccess(pos){
+        document.getElementById("tm").textContent = pos.timestamp;
+        document.getElementById("lat").textContent = pos.coords.latitude;
+        document.getElementById("long").textContent = pos.coords.longitude;
+        document.getElementById("acc").textContent = pos.coords.accuracy;;
+    }
+    function funError(err){
+        console.log(err);
+    }
+</script>
+<body>
+    <div>
+        <h2>Time : <span id="tm"></span></h2>
+        <h2>Latitude : <span id="lat"></span></h2>
+        <h2>Longitude : <span id="long"></span></h2>
+        <h2>Accuracy : <span id="acc"></span></h2>
+    </div>
+</body>
+</html>
