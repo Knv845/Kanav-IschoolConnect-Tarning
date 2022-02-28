@@ -15,6 +15,24 @@
         p:nth-last-child(3){
             background-color: bisque;
         }
+        p:nth-child(2){
+            background-color: blueviolet;
+        }
+        span:nth-child(2n+1){
+            background-color: blue;
+        }
+        span:nth-child(3n+4){
+            background-color: cadetblue;
+        }
+        input:enabled{
+            background-color: aquamarine;
+        }
+        input:disabled{
+            background-color: darkgreen;
+        }
+        div>span{
+            background-color: darkmagenta;
+        }
     </style>
 </head>
 <body>
@@ -33,6 +51,39 @@
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam atque quidem harum laborum consequuntur amet blanditiis quis laudantium cum aliquid! Suscipit voluptates eum hic est expedita fuga doloribus nesciunt quis!
         </p>
+        <div>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, adipisci. Consectetur, aliquam necessitatibus neque quos asperiores quia natus alias, vel tenetur blanditiis officiis? Labore blanditiis ad mollitia esse, earum nulla.</span>
+            <span>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam delectus consequuntur magnam mollitia hic voluptate? Ipsum, beatae ratione? Accusantium provident eum numquam nisi molestiae quos doloribus at. Architecto, voluptates libero!
+            </span>
+            <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus ratione fugit explicabo perspiciatis molestias voluptatum facere quod architecto, temporibus ea natus nemo, officia et alias quae error eveniet ut odio!</span>
+
+            <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus ratione fugit explicabo perspiciatis molestias voluptatum facere quod architecto, temporibus ea natus nemo, officia et alias quae error eveniet ut odio!</span>
+
+            <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus ratione fugit explicabo perspiciatis molestias voluptatum facere quod architecto, temporibus ea natus nemo, officia et alias quae error eveniet ut odio!</span>
+
+            <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus ratione fugit explicabo perspiciatis molestias voluptatum facere quod architecto, temporibus ea natus nemo, officia et alias quae error eveniet ut odio!</span>
+
+            </div>
+    </section>
+    <form action="#" method="get">
+        <label for="email">email</label>
+        <input type="email" name="mail" id="none">
+        <label for="email">name</label>
+        <input type="email" name="mail" id="none">
+        <label for="email">age</label>
+        <input type="email" name="mail" id="none" disabled>
+        <label for="email">phone</label>
+        <input type="email" name="mail" id="none">
+    
+    </form>
+    <section>
+        <div>
+            <span>Span #1, in the div.
+              <span>Span #2, in the span that's in the div.</span>
+            </span>
+          </div>
+          <span>Span #3, not in the div at all.</span>
     </section>
 </body>
 </html>
