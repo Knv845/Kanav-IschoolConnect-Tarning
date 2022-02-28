@@ -33,10 +33,11 @@
         margin-top: 4rem;
         margin-left: 2.5rem;
 
-        border: 0.2px solid;
+       
         width: 1000px;
         height: auto;
         background-color: white;
+        background: linear-gradient(135deg, white 60%,purple);
     }
 </style>
 <script>
@@ -47,14 +48,14 @@
         can.width = "300";
         can.height = "250";
         ctx = can.getContext('2d');
-        var gradient = ctx.createLinearGradient(100, 150, 140, 20);
+        var gradient = ctx.createLinearGradient(100, 200, 140, 20);
 
         gradient.addColorStop(0, 'purple');
         gradient.addColorStop(.5, 'white');
         gradient.addColorStop(1, 'purple');
         ctx.fillStyle = gradient;
         ctx.beginPath();
-        ctx.moveTo(108, 0.0);
+        ctx.moveTo(106, 0.0);
         ctx.lineTo(141, 70);
         ctx.lineTo(218, 78.3);
         ctx.lineTo(162, 131);
