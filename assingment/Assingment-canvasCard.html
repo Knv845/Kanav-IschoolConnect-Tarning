@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dyanamic Greeting card</title>
+</head>
+<style>
+    body {
+        background-color: #F6F8FA;
+    }
+
+    .art1 {
+        text-align: center;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    button:hover {
+        background-color: gray;
+    }
+
+    button:focus {
+        border: 2px solid;
+    }
+
+    .art2 {
+        display: inline-flex;
+        margin-top: 4rem;
+        margin-left: 2.5rem;
+
+        border: 0.2px solid;
+        width: 1000px;
+        height: auto;
+        background-color: white;
+    }
+</style>
+<script>
+    addEventListener("load", star);
+    var can, ctx;
+    function star() {
+        can = document.getElementsByTagName('canvas')[0];
+        can.width = "300";
+        can.height = "250";
+        ctx = can.getContext('2d');
+        var gradient = ctx.createLinearGradient(100, 150, 140, 20);
+
+        gradient.addColorStop(0, 'purple');
+        gradient.addColorStop(.5, 'white');
+        gradient.addColorStop(1, 'purple');
+        ctx.fillStyle = gradient;
+        ctx.beginPath();
+        ctx.moveTo(108, 0.0);
+        ctx.lineTo(141, 70);
+        ctx.lineTo(218, 78.3);
+        ctx.lineTo(162, 131);
+        ctx.lineTo(175, 205);
+        ctx.lineTo(108, 170);
+        ctx.lineTo(41.2, 205);
+        ctx.lineTo(55, 131);
+        ctx.lineTo(1, 78);
+        ctx.lineTo(75, 68);
+        ctx.lineTo(108, 0);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+    }
+</script>
+<script>
+    function setInputValue(source, target) {
+        document.getElementById(target).textContent = source.value;
+    }
+</script>
+
+<body>
+
+    <section>
+        <article class="art1">
+            <h3>Input Name and Date for the Card</h3>
+            <form action="#" method="get">
+                <label for="name">Name : </label>
+                <input type="text" name="name" id="name" oninput="setInputValue(this,'text')" />
+                <label for="Date">Date of Birth :</label>
+                <input type="date" name="date" oninput="setInputValue(this,'date')" />
+            </form>
+            <br>
+    
+        </article>
+        <article class="art2">
+            <canvas> </canvas>
+            <table>
+                <thead>
+                    <th> <h2>Hello From iSchoolConnect, My Name is : </h2></th>
+                    <th><h2 id="text"></h2></th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                        <th><h3>My birthday is on : </h3></th>
+                        <th><h3 id="date"></h3></th>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+    </section>
+</body>
+
+</html>
