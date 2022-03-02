@@ -1,0 +1,66 @@
+.container{
+    background-color: black;
+    width: 100%;
+    display: table;
+    height: auto;
+    margin: auto;
+}
+section article{
+    width: 19%;
+    float: left;
+    padding: 0.5%;
+    
+}
+.art1{
+    background-color: burlywood;
+}
+.art2{
+    background-color: coral;
+}
+.art3{
+    background-color: darkgray;
+}
+.art4{
+    background-color: violet;
+}
+.art5{
+    background-color: darkcyan;
+}
+header{
+    text-align: center;
+}
+@media screen and (max-width: 576px) {
+    .art1{
+        
+        background-color: crimson;
+
+    }
+}
+@media screen and (max-width: 768px) {
+    .art2{
+        
+        background-color: chartreuse;
+    }
+
+    }
+@media screen and (max-width: 992px) {
+    .art3{
+        
+        background-color: darkmagenta;
+
+    }
+}
+@media screen and (max-width: 1200px) {
+    .art4{
+        
+        background-color: darkolivegreen;
+
+    }
+}
+@media screen and (max-width: 1400px) {
+    .art5{
+        
+        background-color: darkslateblue;
+
+    }
+}  
