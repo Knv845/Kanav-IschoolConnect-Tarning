@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array method
+    
+    </title>
+</head>
+<script>
+    //array method pop
+    var arry = ['kanav','vijay','vikrant','rajesh'];
+    console.log(arry);
+    arry.pop('rajesh');
+    console.log(arry)
+    //arry method push
+    var arry2 = ['kanav','vijay','vikrant','rajesh'];
+    console.log(arry2);
+    arry2.push('khai sing');
+    console.log(arry2);
+    // shift method
+    var arry3 =  ['vijay','vikrant','rajesh'];
+    console.log(arry3);
+    var trainer = arry3.shift();
+    console.log(trainer);
+    // unshift method
+    var arry4 =  ['kanav','vijay','vikrant','rajesh'];
+    console.log(arry4);
+    arry4.unshift('khai sing');
+    console.log(arry4)
+    // concat method
+    var trainer = ['vijay'];
+    var interns = ['kanav','vikrant','mani','rajesh','renu'];
+    var ischoolTranings = trainer.concat(interns);
+    console.log(ischoolTranings);
+    // join method
+     var interns = ['kanav','vikrant','mani','rajesh','renu'];
+     console.log(interns.join())
+     // splice method part 1
+     var interns = ['kanav','vikrant','mani','rajesh','renu'];
+     interns.splice(2,0,'Vijay');
+     console.log(interns)
+     // splice method part 2
+     var arry5 =  ['kanav','vijay','vikrant','rajesh'];
+     arry5.splice(2,2)
+     console.log(arry5)
+     // reverse
+      var arry6 = ['1','2','3','4','5','6'];
+      console.log(arry6);
+      arry6.reverse();
+      console.log(arry6);
+      // to string method
+      var arry7  = [1, 2, 'a', '1a'];
+      console.log(arry7.toString());
+      // to locale string  refrence mdn
+      var arry8 = [1, 'a', new Date('21 Dec 1997 14:12:00 UTC')];
+      var localeString = arry8.toLocaleString('en', { timeZone: 'UTC' });
+      console.log(localeString);
+      // sort method in arry
+      // it will see the first value of the number
+      var arry9 = ['2','1','100','98'];
+      console.log(arry9.sort());
+      // slice method
+      var arry10 =  ['kanav','vijay','vikrant','rajesh'];
+      var trainer2 = arry10.slice(0,2);
+      console.log(trainer2);
+</script>
+<body>
+    <h1>Array Methods</h1>
+</body>
+</html>
