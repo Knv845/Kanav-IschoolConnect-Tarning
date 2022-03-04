@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=t, initial-scale=1.0">
     <title>Form Input</title>
+    <script type="text/javascript" src="https://chir.ag/projects/ntc/ntc.js"></script>
     <style>
         table{
             padding: auto;
@@ -103,7 +104,11 @@
     }
     function colorValue(source,target)
     {
-        document.getElementById(target).style.color = source.value;
+        var n_match = ntc.name(source.value);
+      n_rgb = n_match[0]; 
+      n_name = n_match[1]; 
+      n_exactmatch = n_match[2]; 
+      document.getElementById(target).textContent = n_name;
     }
 </script>
 </html>
