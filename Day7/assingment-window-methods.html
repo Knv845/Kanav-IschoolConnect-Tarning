@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="newpage()"> Click To Open</button>
+    
+    <button onclick="closeWindow()"> Close window</button>
+    <button onclick="myalert()"> Click to alert</button>
+    <button onclick="myprompt()"> CLick To view prompt</button>
+    <button onclick="myInterval()"> Click To start</button>
+    <p id="count"></p>
+    <button onclick="myclear()">Click To stop</button>
+</body>
+<script>
+    var count = 0;
+     var interval1;
+// window open
+    function newpage(){
+        var currentWindow = window.open("add-remove.html", "gmail window",
+    "left=100,top=100,width=320,height=320")
+    }
+// window close
+function closeWindow(){
+    currentWindow.close();
+}
+//  alert method
+function myalert(){
+    alert('this is alert function')
+}
+// prompt
+function myprompt(){
+    window.prompt("I am a  prompt");
+}
+// set interval method
+function myInterval(){
+     interval1 = setInterval(function(){
+        document.getElementById('count').innerHTML = count++;
+    },200);
+}
+// clear interval
+function myclear(){
+     clearInterval(interval1);
+}
+
+</script>
+</html>

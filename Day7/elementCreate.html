@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        background-color: black;
+        width: 800px;
+        height: 450px;
+        margin: auto;
+        border: 1px transparent;
+        overflow:scroll;
+    }
+    .container>div{
+        background-color: aliceblue;
+        width: 100px;
+        height: 50px;
+        margin: 5px;
+        float: left;
+
+        
+
+    }
+</style>
+<script>
+    onload = init;
+
+    function init(){
+        document.getElementsByTagName("button")[0].addEventListener("click", clickhandler);
+    };
+
+     function clickhandler(){
+         var element2 = document.createElement("div");
+        document.getElementsByClassName("container")[0].appendChild(element2);
+        console.log('div added')
+    }
+</script>
+<body>
+    <button>Add me</button>
+    <hr>
+    <div class="container"></div>
+</body>
+</html>
+<!--create a function called fun1 and call it on body onload
+    create a function called fun2 and call it on window.addEventListener load
+    create a function called fun3 and call it on document.addEventListener DOMContentLoaded
+    and findout the order of execution
+-->
