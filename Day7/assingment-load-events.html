@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+   
+    window.addEventListener("load",function(){
+        console.log("Window function is now loded");
+    });
+    onload=myBody;
+    
+    function myBody(){
+        var element1 = document.createElement("div");
+        document.getElementsByTagName('h1')[0].appendChild(element1);
+        console.log("body onload is working")
+    }
+    document.addEventListener("DOMContentLoaded",function fun2(){
+        console.log("dom is loded")
+    }) 
+</script>
+<body>
+    <h1></h1>
+</body>
+</html>
