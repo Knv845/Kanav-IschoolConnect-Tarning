@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #done{
+      width: 1000px;
+      height: 700px;
+      display: block;
+      margin: auto;
+      background-color: beige;
+        
+    }
+    button{
+       display: block;
+        border: 2px;
+        padding: 10px 20px 10px 20px;
+        background-color: black;
+        color: whitesmoke;
+        margin: auto;
+        align-self: center;
+    }
+    button:hover{
+        opacity: 0.5;
+        
+    }
+    .box{
+        width: 200px;
+        height: 300px;
+        background-color: cadetblue;
+        border-radius: 10%;
+        padding: 2px;
+        margin: 20px;
+        float: left;
+       
+    }
+    .box h2,h5,h1{
+        text-align: center;
+        margin: -1px;
+        padding: 5px;
+
+    }
+    .image{
+        max-width: 100px;
+        margin: auto;
+        display: block;
+    }
+    .h4{
+       text-align: center;
+       
+    }
+    .box div{
+        padding: 3px;
+    }
+</style>
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.status == 200 && xhr.readyState == 4)
+        {
+            var project = JSON.parse(xhr.responseText).herolist;
+            for(var i=0;i<project.length;i++){
+                document.getElementById("done").innerHTML += "<div class='box'><h2>"+project[i].firstname+"</h2><h5>aka</h5><h1>"+project[i].title+"</h1><img src='"+project[i].poster+"'  class='image'><div><h2>"+project[i].city+"</h2><h5>"+project[i].releasedate+"</h5></h5></div></div>";
+            }
+           
+        }else{
+            console.log('not loaded xmlhttp')
+        }
+    }; 
+    document.addEventListener("DOMContentLoaded",function(){
+        document.getElementsByTagName('button')[0].addEventListener("click",function(){
+            xhr.open("get","data.json",true);
+            xhr.send();
+       
+        })
+    });
+    
+</script>
+<body>
+    <button>Display data</button>
+    <div id="done"></div>
+
+</html>
