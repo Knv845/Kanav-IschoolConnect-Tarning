@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery.js"></script>
+    <script>
+        $(() => {
+            //alert("kanav khera")
+            //$("li:first-child").css("border","2px solid red")
+            //$("li+li").css("background-color","lightblue")
+            //$("li:first-child:even").text("This is the selection")
+            //$("ul").find("a").css("color"," green")
+            //$("p:visible").css("border","2px solid black")
+            // $("[id=select]").css("color","aqua")
+            //$("li:first-child").css("background", "aqua")
+            //$("li:last-child").css("background","aqua")
+            //$("p:first-child").css("background", "green")
+            // $("li:nth-child(even)").css("background","green")
+            // $("li:nth-child(odd)").css("background","blue")
+            // $("li:nth-child(2n+2)").css("background","green")
+            //$("li:nth-child(2n+1)").css("background","green")
+            //$("p").not(".kanav").css("background", "green")
+            //$("p").css("background", "green")
+        //    $("button").click(function(){
+             //      $("div").text("button is added")
+             // });
+            //$(".kanav").closest("div").css("color","aqua")
+            //$(".kanav").parent().css({"border":"2px solid","padding":"6px 6px 6px 6px"})
+           // $("li#select").next().css("color","aqua")
+           // $("button").click(function () {
+              //   let answer = $("#text").val();
+               ///  if(answer == "Kanav"){
+                //     $("#answer").html('<span style="border: 2px solid; padding: 2px;">Answer is Correct</span>')
+               //  }else{
+                //     alert('you need to do more')
+                // }
+             // })
+
+            //$("#add").click(function(){
+                //$("h1").after('<h2>Jquery</h2>');
+                //$("h1").before('<h2>Jquery</h2>')
+              //  $("h1").append('item added')
+           // })
+            //$("#remove").click(function(){
+             //   $("h1").remove()
+           // })
+           //$('li').attr('id','li')
+          $("#add").click(function(){
+            $("a").removeAttr("target");
+           
+            $('ul').toggleClass('myUl')
+            alert(($("ul").hasClass('myUl')))
+          })
+
+
+
+        })
+    </script>
+</head>
+
+<body>
+  <!-- <section>
+       <article>
+           <h4>What is Your Name</h4>
+           <input type="text" id="text"></input>
+           
+           <p id="answer"></p>
+           <button>Click Me</button>
+       </article>
+   </section>
+-->
+<section>
+    <article>
+        <a href="https://www.google.com/" target="_blank">google</a>
+        <a href="https://www.google.com/" target="_blank">yahoo</a>
+        <button id="add">Click me</button>
+    </article>
+    <article>
+        <h1></h1>
+     
+        <button id="add">Click me</button>
+        <button id="remove">Remove</button>
+
+    </article>
+</section>
+
+
+
+    <ul class="myUl">
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <a>list item 3</a>
+        <li>list item 4</li>
+        <li>list item 5</li>
+    </ul>
+    <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+    </ul>
+    <ul>
+        <li>list item 1</li>
+        <li id="select"> list item 2</li>
+        <a>list item 3</a>
+        <li>list item 4</li>
+        <li>list item 5</li>
+    </ul>
+    <ul class="myUl"> 
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+    </ul>
+    <div>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ab doloremque, sequi incidunt vero sunt. Unde
+            corrupti hic dolore amet! Maiores tenetur inventore, excepturi numquam placeat doloribus omnis ullam culpa?
+        </p>
+
+        <p class="kanav">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est ab doloremque, sequi incidunt vero sunt. Unde
+            corrupti hic dolore amet! Maiores tenetur inventore, excepturi numquam placeat doloribus omnis ullam culpa?
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non est illo praesentium recusandae minima illum rem
+            repellendus itaque veniam minus sed fugiat, odio hic deleniti sit amet cupiditate ea nobis.</p>
+    </div>
+</body>
+
+</html>
