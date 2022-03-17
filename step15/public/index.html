@@ -1,23 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="/lib/jquery-3.6.0.js"></script>
     <script>
-        $(function(){
+        refresh();
+        $("#addBtn").on("click", function (){
+            if($("#username").val() || $("#usermail").val() || $("#usercity").val())
+            {
+                let nuser = {
+                    username: $("#username").val(),
+                    usermail: $("#usermail").val(),
+                    usercity: $("#usercity").val()
+                };
+                $.ajax({
+                    method: 'post',
+                    url: "/add",
+                    data: nuser,
+                    contentType: "application/json",
+                    dataType: "json",
+                    success: function (res) {
+                        console.log('success from post ')
+                    },
+                    error: function (error) {
+                        console.log('error from post')
+                    }
+                })
+            }else{
+                alert('please enter valid numbers')}
+                
+        });
+        function refresh() {
             $.ajax({
-                url : "/data",
-                success : function(res, statusText , jqxhr){
-                    console.log(res)
+                url: "/data",
+                success: function (res, statusText, jqxhr) {
+                    $(res).each(function (idx) {
+                        $("#usergrid").append(`
+                        <tr>
+                            <th scope="row">${idx}</th>
+                            <td>${res[idx].name}</td>
+                            <td>${res[idx].email}</td>
+                            <td>${res[idx].city}</td>
+                            <td><button class="btn btn-warning"> Edit </button></td>
+                            <td><button class="btn btn-danger"> delete </button></td>
+                        </tr>`)
+                    });
+                },
+                error: function (jqXHR, statusText, error) {
+                    console.log('error')
                 }
             })
-        })
+        };
     </script>
 </head>
+
 <body>
-    <h1>welcome</h1>
+    <div class="container">
+        <h1>CRUD Express</h1>
+<hr>
+
+        <div id="adduserbox">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Name</label>
+                <input type="text" class="form-control" id="username" aria-describedby="emailHelp">
+
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Email</label>
+                <input type="text" class="form-control" id="usermail">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">city</label>
+                <input type="text" class="form-control" id="usercity">
+            </div>
+
+            <button class="btn btn-primary" id="addBtn">Submit</button>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">city</th>
+                    <th scope="col">EDIT</th>
+                    <th scope="col">DELETE</th>
+                </tr>
+            </thead>
+            <tbody id="usergrid"></tbody>
+        </table>
+    </div>
 </body>
+
 </html>

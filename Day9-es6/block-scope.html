@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,19 +9,23 @@
 </head>
 <script>
     var hero = {
-        title : "Ironman",
-        power : 7
+        title: "Ironman",
+        power: 7
 
     }
-    checkpower();
-    function  checkpower(){
-        var heropower = hero.power;
-        if(heropower > 5){
-            console.log(hero.title);
+checkpower();
+
+    function checkpower() {
+        if (hero.power > 5) {
+            var heropower = hero.power;
         }
+        console.log(heropower); // will show undefined
     }
+  
 </script>
+
 <body>
-    
+
 </body>
+
 </html>

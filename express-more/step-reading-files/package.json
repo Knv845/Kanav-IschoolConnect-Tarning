@@ -1,0 +1,19 @@
+{
+  "name": "readingfiles",
+  "version": "1.0.0",
+  "description": "Used for reading files",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "reading",
+    "easy"
+  ],
+  "author": "kanav",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "fetch": "^1.1.0"
+  }
+}

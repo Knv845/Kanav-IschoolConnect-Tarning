@@ -36,6 +36,10 @@ app.get("/data",(req,res)=>{
     })
 })
 
+app.post("/add",function(req,res){
+    console.log('data recieved',res.body);
+})
+
 
 app.listen(5050, function(error){
     if(error){
